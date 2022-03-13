@@ -1,0 +1,19 @@
+n = input()    #last number on the sieve
+atual = 1
+numeros = []
+
+while atual <= n:    #append all the numbers into list
+    numeros.append(atual)
+    atual = atual + 1
+
+atual = 2
+while atual <= n:    # for number between 2 and n, if is in list then remove multiples
+    if atual in numeros:
+        controle = atual
+        while controle < n:
+            controle = controle + atual
+            if controle in numeros:
+                numeros.remove(controle)
+    atual = atual + 1
+                
+print(numeros)
